@@ -1,11 +1,10 @@
 import os
 
-CREDENTIALS = os.getenv("HUGGINGFACE_ACCESS_TOKEN")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = "example"
 
 PROJECT_SETUP = {
-    "project_id": "change-me",
+    "project_id": "ocrdocumentai-419906",
     "location": "us",
-    "processor_id": "change-me",
+    "processor_id": "ffec49331ad6da12",
     "endpoint": "us-documentai.googleapis.com",     
 }

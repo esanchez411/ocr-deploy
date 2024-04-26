@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'core',                           
-    'rest_framework_swagger',        
     'rest_framework',               
     'drf_spectacular',
     'ocr_text',   
@@ -90,6 +89,9 @@ DATABASES = {
     }
 }
 
+DATABASES['default']= dj_database_url.parse("postgres://ocr_deploy_user:us1wyX9Dl8A2ltR06jmwCM8knIppj1Aj@dpg-coljpki0si5c73f2vdbg-a.oregon-postgres.render.com/ocr_deploy")
+
+# PGPASSWORD=us1wyX9Dl8A2ltR06jmwCM8knIppj1Aj psql -h dpg-coljpki0si5c73f2vdbg-a.oregon-postgres.render.com -U ocr_deploy_user ocr_deploy
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
