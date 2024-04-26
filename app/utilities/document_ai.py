@@ -20,9 +20,9 @@ class DocumentAI:
 
     def get_documents(self):
         docs_path = []
-        for document in os.listdir('src/utilities/documents/'):
+        for document in os.listdir('app/utilities/documents/'):
             if document.endswith(".pdf"):
-                complete_path = os.path.join('src/utilities/documents/', document)
+                complete_path = os.path.join('app/utilities/documents/', document)
                 docs_path.append(complete_path) 
         print(docs_path)        
         return docs_path    
@@ -174,8 +174,8 @@ class DocumentAI:
                 print(f"{key}: {value}")
 
     def drop_processed_documents(self):
-        for document in os.listdir('src/utilities/documents/'):
+        for document in os.listdir('app/utilities/documents/'):
             if document.endswith(".pdf"):
-                complete_path = os.path.join('src/utilities/documents/', document)
+                complete_path = os.path.join('app/utilities/documents/', document)
                 os.remove(complete_path) 
         return None 
